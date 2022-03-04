@@ -1,0 +1,200 @@
+header
+  position: fixed
+  left: 50%
+  transform: translateX(-50%)
+  top: 0
+  z-index: 100
+  width: 100%
+  &.header-blog
+    background: rgba(#000, 0.7)
+  .container
+    max-width: 1200px
+    width: 100%
+    padding: 0 20px
+    margin: 0 auto
+    display: flex
+    height: 70px
+    justify-content: space-between
+    align-items: center
+    .nav
+      display: flex
+      .nav__item
+        + .nav__item
+          margin-left: 20px
+        a
+          color: #fff
+          text-decoration: none
+
+main
+  height: 100vh
+  overflow: hidden
+  min-width: 1200px
+.top-contents
+  background: url(/assets/images/main_bg.jpg) center center no-repeat
+  background-size: cover
+  height: 100vh
+  overflow: hidden
+  min-height: 800px
+.content-wrap
+  padding: 70px 20px
+  box-sizing: border-box
+  height: 100vh
+  overflow: auto
+  width: 100%
+  position: relative
+  color: #a0a0a0
+  display: flex
+  align-items: center
+  justify-content: center
+  &.blog-wrap
+    background: #fff
+    height: auto
+    display: block
+    padding: 0
+    .content-inner
+      position: static
+      transform: none
+      margin: 0 auto
+      text-align: left
+  .content-inner
+    width: 1160px
+    text-align: center
+
+  .main-logo
+    width: 300px
+    margin-bottom: 30px
+  .about-content
+    + .about-content
+      margin-top: 70px
+  h2
+    font-size: 3rem
+    font-weight: bold
+    color: #fff
+    margin-bottom: 10px
+  .btn-link
+    display: flex
+    justify-content: center
+    margin-top: 30px
+    li
+      margin: 0 10px
+      a
+        display: block
+        width: 180px
+        padding: 11px 0
+        text-align: center
+        border: 1px solid #fff
+        border-radius: 4px
+        color: #a0a0a0
+        text-decoration: none
+        transition: .5s
+        &:hover
+          background: #fff
+  .discography-list
+    display: flex
+    justify-content: center
+    li
+      transition: .3s
+
+    &.top
+      margin: 40px 0
+      li
+        margin: 0 30px
+        &:hover
+          transform: scale(1.1)
+          box-shadow: 0 0 20px #000
+          cursor: pointer
+    &.bottom
+      li
+        margin: 0 10px
+        &:hover
+          transform: scale(1.2)
+          box-shadow: 0 0 1px #000
+  .discography-modal
+    display: none
+    position: fixed
+    width: 100%
+    height: 100vh
+    background: rgba(#000, 0.7)
+    z-index: 10000
+    left: 0
+    top: 0
+    .modal-inner
+      position: absolute
+      left: 50%
+      top: 50%
+      transform: translate(-50%, -50%)
+      .detail
+        display: none
+        &#sousou
+          background: #000
+        &#idealwelt
+          background: #700e1d
+        &#curtain
+          background: #5e2615
+        .detail-inner
+          display: flex
+          width: 900px
+          align-items: center
+          img
+            vertical-align: bottom
+          .contents
+            flex: 1
+            text-align: center
+            color: #fff
+            h3
+              font-size: 3rem
+              font-weight: bold
+              margin-bottom: 30px
+            .release
+              font-weight: bold
+              margin-bottom: 10px
+            .link-button
+              margin-top: 15px
+              text-align: center
+              a
+                display: inline-block
+                padding: 10px 0
+                width: 200px
+                color: #fff
+                text-decoration: none
+                border: 1px solid #fff
+                border-radius: 4px
+                font-size: 1.8rem
+                transition: .3s
+                &:hover
+                  background: #fff
+                  color: #a0a0a0
+      #modal-close-btn
+        position: absolute
+        right: -20px
+        top: -20px
+        width: 40px
+        height: 40px
+        &:hover
+          cursor: pointer
+        &::before, &::after
+          content: ""
+          background: #fff
+          position: absolute
+          left: 50%
+          top: 50%
+          width: 40px
+          height: 3px
+          display: block
+        &::before
+          transform: translate(-50%, -50%)rotate(45deg)
+        &::after
+          transform: translate(-50%, -50%)rotate(-45deg)
+footer
+  position: absolute
+  bottom: 0
+  left: 50%
+  transform: translateX(-50%)
+  padding: 10px 0
+  color: #a0a0a0
+  &.footer-blog
+    position: static
+    background: rgba(#000, 0.7)
+    text-align: center
+    padding: 20px 0
+    transform: none

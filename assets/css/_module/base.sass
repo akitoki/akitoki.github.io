@@ -1,0 +1,24 @@
+html
+  font-size: 62.5%
+body
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI",'Arial', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', '游ゴシック', 'Yu Gothic', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', sans-serif
+  font-size: 1.8rem
+  min-height: 100vh
+  position: relative
+  opacity: 1
+  &::after
+    content: ''
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-color: #fff
+    z-index: -1
+    pointer-events: none
+    opacity: 0
+    -webkit-transition: opacity 1s ease, z-index 1s ease
+    transition: opacity 1s ease, z-index 1s ease
+  &.fadeout::after
+    opacity: 1
+    z-index: 9999
