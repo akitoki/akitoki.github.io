@@ -46,6 +46,9 @@ sass:
 
 excerpt_separator: <!--more-->
 
+includes:
+  - blog/_includes
+
 plugins:
   - jekyll-paginate
   - jekyll-feed
