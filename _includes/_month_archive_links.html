@@ -1,6 +1,6 @@
 {% assign yearmonths_dupli = "" | split: "" %}
 {% for post in site.posts %}
-    {% assign ym = post.date | date: '%Y年%m月' %}
+    {% assign ym = post.date | date: '%Y-%m' %}
     {% assign yearmonths_dupli = yearmonths_dupli | push: ym %}
 {% endfor %}
 {% assign yearmonths_dupli = yearmonths_dupli | sort | reverse %}
