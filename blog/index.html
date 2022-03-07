@@ -105,9 +105,8 @@ description: プロフィールページのサンプルです｡よろしくお�
     <div class="sidebar-module">
         <h4>月別アーカイブ</h4>
         <ul>
-         {% tag_monthly_archive %}
+          {% include_relative _includes/_month_archive_links.html %}
         </ul>
      </div>
-     {% include_relative _includes/_month_archive_links.html %}
   </div>
 </div><!--container-->

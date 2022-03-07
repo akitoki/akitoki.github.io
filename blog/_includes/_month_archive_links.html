@@ -20,5 +20,5 @@
 {% assign item = "" | split: "" | push: ym | push: count %}
 {% assign yearmonths = yearmonths | push: item %}
 {% for years in yearmonths %}
-{{years[0]}}({{years[1]}})
+<li><a href="/blog/{{years[0]}}">{{years[0]}}({{years[1]}})</a></li>
 {% endfor %}
