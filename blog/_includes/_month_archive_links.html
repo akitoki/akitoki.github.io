@@ -1,0 +1,24 @@
+{% assign yearmonths_dupli = "" | split: "" %}
+{% for post in site.posts %}
+    {% assign ym = post.date | date: '%Y-%m' %}
+    {% assign yearmonths_dupli = yearmonths_dupli | push: ym %}
+{% endfor %}
+{% assign yearmonths_dupli = yearmonths_dupli | sort | reverse %}
+{% assign yearmonths = "" | split: "|" %}
+{% assign count = 0 %}
+{% assign prev = yearmonths_dupli | first %}
+{% for ym in yearmonths_dupli %}
+    {% if prev == ym %}
+        {% assign count = count | plus: 1 %}
+    {% else %}
+        {% assign item = "" | split: "" | push: prev | push: count %}
+        {% assign yearmonths = yearmonths | push: item %}
+        {% assign count = 1 %}
+    {% endif %}
+    {% assign prev = ym %}
+{% endfor %}
+{% assign item = "" | split: "" | push: ym | push: count %}
+{% assign yearmonths = yearmonths | push: item %}
+{% for years in yearmonths %}
+{{years[0]}}({{years[1]}})
+{% endfor %}

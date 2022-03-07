@@ -7,7 +7,7 @@ layout: post
 guid: 'http://a-head.cc/?p=207'
 twitter_id:
     - '4.5065984362E+17'
-categories:
+tags:
     - diary
 ---
 

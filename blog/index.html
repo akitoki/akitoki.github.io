@@ -94,12 +94,20 @@ description: プロフィールページのサンプルです｡よろしくお�
   </div>
   <div class="right-column">
     <div class="column-box">
+{% include_relative _includes/_tags.html %}
       <h2>カテゴリー</h2>
       <ul>
-        {% for category in site.categories %}
-    <li><a href="/blog/{{ category[0] }}">{{ category[0] }}</a></li>
+        {% for tag in site.tags %}
+    <li><a href="/blog/tag/{{ tag[0] }}">{{ tag[0] }}</a></li>
   {% endfor %}
       </ul>
     </div>
+    <div class="sidebar-module">
+        <h4>月別アーカイブ</h4>
+        <ul>
+         {% tag_monthly_archive %}
+        </ul>
+     </div>
+     {% include_relative _includes/_month_archive_links.html %}
   </div>
 </div><!--container-->
