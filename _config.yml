@@ -52,7 +52,6 @@ includes:
 plugins:
   - jekyll-paginate
   - jekyll-feed
-  - jekyll-browsersync
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -79,3 +78,7 @@ collections:
     permalink: /blog/tag/:name/
     filepath: /blog/tag
     layout: category
+
+  archives:
+    output: true
+    permalink: /blog/archives/:path/
