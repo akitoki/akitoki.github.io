@@ -10,7 +10,7 @@ title: A-HEAD BLOG
       <div class="pagination">
 
         {% if paginator.previous_page %}
-          <a class="pagination__item" href="{{ paginator.previous_page_path | relative_url }}">&lt; 前のページ</a>
+          <a class="pagination__item pagination__prev" href="{{ paginator.previous_page_path | relative_url }}">&lt; 前のページ</a>
         {% endif %}
 
         <span class="pagination__item pagination__number">
@@ -18,7 +18,7 @@ title: A-HEAD BLOG
         </span>
 
         {% if paginator.next_page %}
-          <a class="pagination__item" href="{{ paginator.next_page_path | relative_url }}">次のページ &gt;</a>
+          <a class="pagination__item pagination__next" href="{{ paginator.next_page_path | relative_url }}">次のページ &gt;</a>
         {% endif %}
 
       </div><!--pagination-->

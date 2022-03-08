@@ -21,18 +21,14 @@ layout: blog
       </section>
     </article>
     <!-- 前後のページへのリンクを表示したい -->
-    <div class="pager">
+    <div class="pagination">
 
       {% if page.next %}
-        <p class="pager__item--next">
-          <a href="{{ page.next.url | relative_url }}">&lt; {{ page.next.title }}</a>
-        </p>
+        <a class="pagination__prev" href="{{ page.next.url | relative_url }}">&lt; {{ page.next.title }}</a>
       {% endif %}
 
       {% if page.previous %}
-        <p class="pager__item--prev">
-          <a href="{{ page.previous.url | relative_url }}">{{ page.previous.title }} &gt;</a>
-        </p>
+        <a class="pagination__next" href="{{ page.previous.url | relative_url }}">{{ page.previous.title }} &gt;</a>
       {% endif %}
 
     </div><!--pager-->
