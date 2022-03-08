@@ -1,13 +1,16 @@
 ---
 layout: blog
 ---
-<div class="monthly-archive">
-  <div>
-    <span class="title">Monthly archive for {{page.year}}/{{page.month}}</span>
+<div class="content-inner">
+  <div class="left-column">
+    <h1>{{page.year}}/{{page.month}}<span>の記事一覧</span></h1>
+
+    <section class="article-list">
+      {{ content }}
+      </section>
+
   </div>
-  <div>
-    <ul>
-{{ content }}
-    </ul>
+  <div class="right-column">
+    {% include _side_column.html %}
   </div>
-</div>
+</div><!--container-->

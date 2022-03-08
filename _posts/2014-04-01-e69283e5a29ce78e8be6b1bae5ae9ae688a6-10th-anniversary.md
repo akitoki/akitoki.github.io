@@ -4,15 +4,15 @@ title: '撃墜王決定戦 10th Anniversary'
 date: '2014-04-01T00:44:13+09:00'
 author: akitoki
 layout: post
-guid: 'http://a-head.cc/?p=207'
+guid: '/?p=207'
 twitter_id:
     - '4.5065984362E+17'
 tags:
-    - diary
+    - イベント告知
 ---
 
 CROW’SCLAWの鷹さんが主催する「[撃墜王決定戦 10th Anniversary](http://gekitsui.crowsclaw.info)」にて、Sterblich Magieとして楽曲を投稿しております。
-
+<!--more-->
 「ルクレツィア」  
 作曲：多賀氏 正義  
 作詞：マカキセキ  
