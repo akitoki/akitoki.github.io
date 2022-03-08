@@ -1,17 +1,13 @@
 name: Generate Jekyll Archives
 # description: Generate categories, tags and years archive files.
 on:
-  workflow_dispatch:
-  push:
-    paths:
-      - "_posts/**"
+  deployment
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: helaili/jekyll-action@2.0.1
       - name: Generate Jekyll Archives
         uses: kannansuresh/jekyll-blog-archive-workflow@master
         with:
