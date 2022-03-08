@@ -2,27 +2,24 @@
 layout: blog
 ---
 
-<div class="contents page">
-  <div class="container">
-
-    <div class="page__header">
-      <h1 class="page__title">{{ page.title }}</h1>
-      <p class="page__date">{{ page.date | date: '%M %d, %Y' }}</p>
-      {% for tag in page.tags %}
-        <li>
-          <a href="/category/{{ tag }}">{{tag}}</a>
-        </li>
-      {% endfor %}
-    </div>
-
-    <div class="page__body">
-
-
-      {{ content }}
-
-
-    </div><!--page__body-->
-
+<div class="content-inner">
+  <div class="left-column">
+    <article class="article">
+      <h1 class="title">{{ page.title }}</h1>
+      <div class="title-under">
+        <ul class="tag">
+          {% for tag in page.tags %}
+            <li>
+              <a href="/tag/{{ tag }}">{{tag}}</a>
+            </li>
+          {% endfor %}
+        </ul>
+        <p class="archive__date"><time>{{ page.date | date: '%Y/%-m/%-d' }}</time></p>
+      </div>
+      <section class="article-block">
+        {{ content }}
+      </section>
+    </article>
     <!-- 前後のページへのリンクを表示したい -->
     <div class="pager">
 
@@ -40,5 +37,8 @@ layout: blog
 
     </div><!--pager-->
 
-  </div><!--container-->
+  </div><!--article-post-->
+  <div class="right-column">
+    {% include _side_column.html %}
+  </div>
 </div><!--page-->
