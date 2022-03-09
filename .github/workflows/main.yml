@@ -1,0 +1,26 @@
+name: Generate Jekyll Archives - regularly
+# description: Generate categories, tags and years archive files.
+on:
+  schedule:
+    - cron: '0 0 * * *'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Generate Jekyll Archives
+        uses: kannansuresh/jekyll-blog-archive-workflow@master
+        with:
+          archive_url: "https://akitoki.github.io/blog/archives/archivedata"
+          archive_folder_path: "blog"
+
+      - name: setup git config
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+
+      - name: commit
+        run: |
+          git add --all
+          git commit -m "Created and updated archive files." || echo "No changes to commit."
+          git push origin master || echo "No changes to push."
