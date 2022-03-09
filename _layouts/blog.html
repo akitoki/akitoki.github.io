@@ -3,15 +3,20 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>{{site.title}}</title>
   <!-- Main CSS -->
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-  <meta name="description" content="ここにページの説明文">
+  <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="/assets/js/script.js"></script>
   {% feed_meta %}
+  {% seo %}
+  {% if page.image %}
+  <meta property="og:image" content="{{ site.url }}/assets/images/{{ page.image }}" />
+  {% else %}
+  <meta property="og:image" content="{{ site.url }}/assets/images/ogimage.png" />
+  {% endif %}
 </head>
 
 <body class="fadeout">

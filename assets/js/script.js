@@ -1,4 +1,5 @@
 $(function() {
+  $("meta[property = 'og:locale']").attr('content','ja_JP');
   const url = location.pathname
   $('header a[href^="/#"]').on('click', function(e) {
     e.preventDefault()
@@ -36,7 +37,7 @@ $(function() {
     }, 500)
     return false
   })
-  $('.blog-wrap a').on('click', function(e) {
+  $('.blog-wrap a:not([href^="#"]):not([target])').on('click', function(e) {
     e.preventDefault()
     const link = $(this).attr('href')
     $('body').fadeOut(300)

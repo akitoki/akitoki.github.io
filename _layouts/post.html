@@ -18,17 +18,20 @@ layout: blog
       </div>
       <section class="article-block">
         {{ content }}
+        <div class="sns-block">
+          <a href="https://twitter.com/share?url={{site.url}}{{page.url}}&text={{page.title}}" target="_blank"><img src="/assets/images/icon_twitter.svg" alt="ツイート"></a>
+        </div>
       </section>
     </article>
     <!-- 前後のページへのリンクを表示したい -->
-    <div class="pagination">
+    <div class="pagination article-pagination">
 
       {% if page.next %}
-        <a class="pagination__prev" href="{{ page.next.url | relative_url }}">&lt; {{ page.next.title }}</a>
+        <a class="pagination__prev" href="{{ page.next.url | relative_url }}">{{ page.next.title }}</a>
       {% endif %}
 
       {% if page.previous %}
-        <a class="pagination__next" href="{{ page.previous.url | relative_url }}">{{ page.previous.title }} &gt;</a>
+        <a class="pagination__next" href="{{ page.previous.url | relative_url }}">{{ page.previous.title }}</a>
       {% endif %}
 
     </div><!--pager-->
