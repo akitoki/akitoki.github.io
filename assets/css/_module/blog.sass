@@ -33,10 +33,14 @@
   .content-inner
     display: flex
     justify-content: space-between
+    +mediaTab
+      padding: 0 2vw
     +mediaSp
       display: block
     .left-column
       width: 900px
+      +mediaTab
+        width: 66vw
       +mediaSp
         width: auto
         padding: 0 20px
@@ -47,6 +51,8 @@
         border-left: 4px solid #ccc
     .right-column
       width: 260px
+      +mediaTab
+        width: 28vw
       +mediaSp
         width: auto
         padding: 0 20px

@@ -73,7 +73,7 @@ $(function() {
      $('body, html').animate({ scrollTop: 0 }, 500, 'swing');
      return false;
   })
-  if ($(window).width() < 736) {
+  if ($(window).width() < 737) {
     const spMenuBtn = $('header .sp-icon')
     spMenuBtn.on('click', function() {
       $(this).toggleClass('open').next('nav').slideToggle()

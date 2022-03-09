@@ -22,6 +22,7 @@ header
     height: 70px
     justify-content: space-between
     align-items: center
+    box-sizing: border-box
     +mediaSp
       height: 50px
     .nav
@@ -87,6 +88,8 @@ main
   height: 100vh
   overflow: hidden
   min-width: 1200px
+  +mediaTab
+    min-width: auto
   +mediaSp
     min-width: auto
 .top-contents
@@ -127,7 +130,7 @@ main
       margin: 0 auto
       text-align: left
   .content-inner
-    width: 1200px
+    max-width: 1200px
     text-align: center
     +mediaSp
       width: 100%
@@ -176,6 +179,8 @@ main
   .discography-list
     display: flex
     justify-content: center
+    +mediaTab
+      flex-wrap: wrap
     +mediaSp
       flex-wrap: wrap
     li
@@ -188,6 +193,11 @@ main
         margin-top: 20px
       li
         margin: 0 30px
+        +mediaTab
+          width: 28vw
+          margin: 0 1.5vw
+          img
+            max-width: 100%
         +mediaSp
           margin: 0 0 20px
           text-align: center
@@ -198,6 +208,11 @@ main
     &.bottom
       li
         margin: 0 10px
+        +mediaTab
+          margin: 0 0.75vw
+          width: 10vw
+          img
+            max-width: 100%
         +mediaSp
           margin: 10px 20px
         &:hover
@@ -229,19 +244,50 @@ main
           display: flex
           width: 900px
           align-items: center
+          +mediaTab
+            width: 350px
+            display: block
+          +mediaSp
+            display: block
+            width: 80vw
+          .jacket
+            +mediaSp
+              display: none
           img
             vertical-align: bottom
+            max-width: 100%
           .contents
             flex: 1
             text-align: center
             color: #fff
+            +mediaTab
+              padding: 10px 10px 20px
+            +mediaSp
+              padding: 30px 20px 40px
             h3
               font-size: 3rem
               font-weight: bold
               margin-bottom: 30px
+              +mediaTab
+                font-size: 2.4rem
+                margin-bottom: 20px
+              +mediaSp
+                font-size: 2.4rem
+                margin-bottom: 10px
             .release
               font-weight: bold
               margin-bottom: 10px
+              +mediaTab
+                font-size: 1.4rem
+              +mediaSp
+                font-size: 1.4rem
+            +mediaTab
+              p
+                font-size: 1.4rem
+
+            +mediaSp
+              p
+                font-size: 1.4rem
             .link-button
               margin-top: 15px
               text-align: center
@@ -255,6 +301,8 @@ main
                 border-radius: 4px
                 font-size: 1.8rem
                 transition: .3s
+                +mediaSp
+                  font-size: 1.6rem
                 &:hover
                   background: #fff
                   color: #a0a0a0
