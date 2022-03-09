@@ -2,7 +2,8 @@ name: Generate Jekyll Archives
 # description: Generate categories, tags and years archive files.
 on:
   deployment
-
+  schedule:
+    - cron:  '* * 1 * *'
 jobs:
   build:
     runs-on: ubuntu-latest
