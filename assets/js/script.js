@@ -97,3 +97,8 @@ $(window).on('resize', function() {
     $('.top-contents').animate({scrollTop: position}, 0, 'swing')
   }
 })
+window.onpageshow = function(event) {
+  if (event.persisted) {
+    window.location.reload();
+  }
+};
