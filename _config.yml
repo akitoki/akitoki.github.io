@@ -41,6 +41,8 @@ sass:
   sass_dir: 'assets/css'
   style: compressed
 
+timezone: Asia/Tokyo
+
 excerpt_separator: <!--more-->
 
 includes:
