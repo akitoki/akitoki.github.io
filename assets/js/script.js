@@ -15,7 +15,7 @@ $(function() {
       $('body').fadeOut()
       setTimeout(function() {
         window.location = link
-      }, 500)
+      }, 300)
     } else {
       if (hash !== '/') {
         if (link !== hash) {
@@ -30,7 +30,7 @@ $(function() {
   $('header a[href^="/blog"]').on('click', function(e) {
     e.preventDefault()
     const link = $(this).attr('href')
-    $('.top-contents').fadeOut(500)
+    $('.top-contents').fadeOut(300)
     setTimeout(function() {
       window.location = link
     }, 500)
@@ -39,10 +39,10 @@ $(function() {
   $('.blog-wrap a').on('click', function(e) {
     e.preventDefault()
     const link = $(this).attr('href')
-    $('body').fadeOut(500)
+    $('body').fadeOut(300)
     setTimeout(function() {
       window.location = link
-    }, 500)
+    }, 300)
   })
   if (window.performance.navigation.type === 1 && !url.match('/blog/')) {
     const hash = '/' + location.hash
@@ -60,6 +60,30 @@ $(function() {
   $('.discography-modal .modal-inner').on('click', function(e) {
     e.stopPropagation();
   })
+  const pagetop = $('#page-top');
+  $(window).on('scroll', function () {
+    if ($(this).scrollTop() > 300) {
+      pagetop.fadeIn();
+    } else {
+      pagetop.fadeOut();
+    }
+  });
+  pagetop.on('click', function () {
+     $('body, html').animate({ scrollTop: 0 }, 500, 'swing');
+     return false;
+  })
+  if ($(window).width() < 736) {
+    const spMenuBtn = $('header .sp-icon')
+    spMenuBtn.on('click', function() {
+      $(this).toggleClass('open').next('nav').slideToggle()
+    })
+    const spNavLink = $('header .nav__item a')
+    spNavLink.on('click', function() {
+      console.log('click')
+      $(this).parents('nav').slideToggle()
+      spMenuBtn.toggleClass('open')
+    })
+  }
 })
 $(window).on('load', function(){
   $('body').removeClass('fadeout');

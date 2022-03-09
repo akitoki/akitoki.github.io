@@ -5,8 +5,14 @@ header
   top: 0
   z-index: 100
   width: 100%
+  +mediaSp
+    background: rgba(#000, 0.7)
   &.header-blog
     background: rgba(#000, 0.7)
+  .site-title
+    img
+      +mediaSp
+        width: 80px
   .container
     max-width: 1200px
     width: 100%
@@ -16,6 +22,8 @@ header
     height: 70px
     justify-content: space-between
     align-items: center
+    +mediaSp
+      height: 50px
     .nav
       display: flex
       .nav__item
@@ -24,17 +32,71 @@ header
         a
           color: #fff
           text-decoration: none
-
+    +mediaSp
+      nav
+        display: none
+        position: absolute
+        width: 100%
+        left: 0
+        top: 50px
+        background: rgba(#000, 0.7)
+        .nav
+          display: block
+          .nav__item
+            border-top: 1px solid #ccc
+            + .nav__item
+              margin-left: 0
+            a
+              display: block
+              padding: 10px 20px
+    .sp-icon
+      display: none
+      +mediaSp
+        display: block
+        width: 28px
+        height: 2px
+        background: #fff
+        position: absolute
+        right: 20px
+        top: 50%
+        transform: translateY(-50%)
+        &::before, &::after
+          content: ""
+          display: block
+          width: 28px
+          height: 2px
+          background: #fff
+          position: absolute
+          right: 0
+          top: 50%
+          transform: translateY(-50%)
+          transition: .3s
+        &::before
+          margin-top: -8px
+        &::after
+          margin-top: 8px
+        &.open
+          background: transparent
+          &::before
+            transform: translateY(-50%)rotate(45deg)
+            margin-top: 0
+          &::after
+            transform: translateY(-50%)rotate(-45deg)
+            margin-top: 0
 main
   height: 100vh
   overflow: hidden
   min-width: 1200px
+  +mediaSp
+    min-width: auto
 .top-contents
   background: url(/assets/images/main_bg.jpg) center center no-repeat
   background-size: cover
   height: 100vh
   overflow: hidden
   min-height: 800px
+  +mediaSp
+    min-height: 100vh
 .content-wrap
   padding: 70px 20px
   box-sizing: border-box
@@ -46,6 +108,14 @@ main
   display: flex
   align-items: center
   justify-content: center
+  +mediaSp
+    padding: 80px 20px 50px
+    display: block
+    font-size: 1.4rem
+    &#top
+      display: flex
+      .content-inner
+        text-align: center
   &.blog-wrap
     background: #fff
     height: auto
@@ -59,18 +129,28 @@ main
   .content-inner
     width: 1200px
     text-align: center
+    +mediaSp
+      width: 100%
+      text-align: left
 
   .main-logo
     width: 300px
     margin-bottom: 30px
+    +mediaSp
+        width: 200px
   .about-content
     + .about-content
       margin-top: 70px
+      +mediaSp
+        margin-top: 40px
   h2
     font-size: 3rem
     font-weight: bold
     color: #fff
     margin-bottom: 10px
+    +mediaSp
+      font-size: 2.4rem
+      text-align: center
   .btn-link
     display: flex
     justify-content: center
@@ -89,16 +169,28 @@ main
         transition: .5s
         &:hover
           background: #fff
+      +mediaSp
+        margin: 0 5px
+        a
+          width: 28vw
   .discography-list
     display: flex
     justify-content: center
+    +mediaSp
+      flex-wrap: wrap
     li
       transition: .3s
 
     &.top
       margin: 40px 0
+      +mediaSp
+        display: block
+        margin-top: 20px
       li
         margin: 0 30px
+        +mediaSp
+          margin: 0 0 20px
+          text-align: center
         &:hover
           transform: scale(1.1)
           box-shadow: 0 0 20px #000
@@ -106,6 +198,8 @@ main
     &.bottom
       li
         margin: 0 10px
+        +mediaSp
+          margin: 10px 20px
         &:hover
           transform: scale(1.2)
           box-shadow: 0 0 1px #000
@@ -192,9 +286,70 @@ footer
   transform: translateX(-50%)
   padding: 10px 0
   color: #a0a0a0
+  width: 100%
+  text-align: center
+  +mediaSp
+    background: rgba(#000, 0.7)
+    padding: 5px 0
+    font-size: 1.2rem
   &.footer-blog
     position: static
     background: rgba(#000, 0.7)
     text-align: center
     padding: 20px 0
     transform: none
+    +mediaSp
+      padding: 5px 0
+
+#page-top
+  display: none
+  position: fixed
+  bottom: 40px
+  right: 40px
+  font-size: 14px
+  line-height: 1
+  z-index: 99
+  +mediaSp
+    right: 20px
+  a
+    background: #fff
+    box-shadow: 0 0 16px rgba(#000, 0.15)
+    text-decoration: none
+    color: #fff
+    width: 70px
+    padding: 28px 5px
+    text-align: center
+    display: block
+    border-radius: 90px
+    transition: all .3s ease
+    position: relative
+    box-sizing: border-box
+    +mediaSp
+      width: 50px
+      padding: 18px 5px
+
+    &::before, &::after
+      content: ""
+      display: block
+      width: 20px
+      height: 4px
+      background: #ccc
+      position: absolute
+      left: 50%
+      top: 50%
+      +mediaSp
+        width: 15px
+        height: 2px
+    &::before
+      margin-left: -6px
+      transform: translate(-50%, -50%)rotate(-45deg)
+      +mediaSp
+        margin-left: -4px
+    &::after
+      margin-left: 6px
+      transform: translate(-50%, -50%)rotate(45deg)
+      +mediaSp
+        margin-left: 4px
+    &:hover
+      text-decoration: none
+      opacity: .7

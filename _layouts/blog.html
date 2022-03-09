@@ -18,17 +18,7 @@
 
 <!-- サイト名とナビゲーション部分｡全ページ共通 -->
 <header class="header header-blog">
-  <div class="container">
-    <div class="site-title"><img src="/assets/images/logo.svg" alt="{{site.title}}" width="150"></div>
-    <nav>
-      <ul class="nav">
-        <li class="nav__item"><a href="/#top">TOP</a></li>
-        <li class="nav__item"><a href="/#about">ABOUT</a></li>
-        <li class="nav__item"><a href="/#discography">DISCOGRAPHY</a></li>
-        <li class="nav__item"><a href="{{ '/blog/' | relative_url }}">BLOG</a></li>
-      </ul>
-    </nav>
-  </div>
+  {% include _header.html %}
 </header>
 <div class="content-wrap blog-wrap">
   <div class="blog-header">
@@ -40,6 +30,7 @@
   {{ content }}
 </div>
 <!-- フッター｡全ページ共通 -->
+<div id="page-top"><a href="#">&nbsp;</a></div>
 <footer class="footer footer-blog">
   <div class="container">
     <div class="footer__container">
