@@ -93,7 +93,11 @@ $(function() {
     const position = target.offset().top - headerHeight
     $('html').animate({scrollTop:position}, speed, 'swing')
     return false;
-  });
+  })
+  const shareUrl = $('.sns-block a').attr('href')
+  const encodeUrl = encodeURI(shareUrl)
+  console.log(encodeUrl)
+  $('.sns-block a').attr('href', encodeUrl)
 })
 $(window).on('load', function(){
   $('body').removeClass('fadeout');
