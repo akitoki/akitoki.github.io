@@ -36,7 +36,7 @@ defaults:
       path: ""
       type: "posts"
     values:
-      permalink: /blog/:year:month:day.html
+      permalink: /blog/:title:output_ext
 sass:
   sass_dir: 'assets/css'
   style: compressed
