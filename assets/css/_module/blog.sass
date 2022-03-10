@@ -344,3 +344,17 @@
         .pagination__prev
           + .pagination__next
             margin-top: 20px
+#markdown-toc
+  border: 1px solid #eee
+  padding: 20px 30px
+  li
+    margin: 5px 0
+  +mediaSp
+    padding: 15px 20px
+  &::before
+    content: "目次"
+    color: #333
+    font-size: 1.8rem
+    font-weight: bold
+    +mediaSp
+      font-size: 1.6rem
