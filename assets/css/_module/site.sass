@@ -120,6 +120,8 @@ main
       display: flex
       .content-inner
         text-align: center
+  .not-found
+    text-align: center
   &.blog-wrap
     background: #fff
     height: auto
@@ -307,6 +309,21 @@ main
                 &:hover
                   background: #fff
                   color: #a0a0a0
+            .btn-link
+              margin-top: 10px
+              .link-button
+                margin: 0 5px
+              +mediaTab
+                display: block
+                margin-top: 0
+                .link-button
+                  margin-top: 10px
+              +mediaSp
+                display: block
+                margin-top: 0
+                .link-button
+                  margin-top: 10px
+
       #modal-close-btn
         position: absolute
         right: -20px
