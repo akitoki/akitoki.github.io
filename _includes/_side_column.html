@@ -8,3 +8,18 @@
     {% include _month_archive_links.html %}
   </ul>
 </div>
+<div class="column-box">
+  <h2>最近の投稿</h2>
+  <ul class="month">
+    {% for post in site.posts limit:5 %}
+      <li>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  <div class="feed">
+    <a href="{{ site.url }}/feed.xml">
+      <img src="/assets/images/icon_feed.svg" alt="feed" width="20">
+    </a>
+  </div>
+</div>
